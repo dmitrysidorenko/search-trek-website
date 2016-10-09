@@ -26,10 +26,25 @@
         function snapshotToArray(snapshot) {
             var arr = [];
             snapshot.forEach(function (row) {
-                var d = row.val();
+                var d = normalizeTreeItem(row.val());
                 arr.push({key: row.key, data: d});
             });
             return arr;
+        }
+
+        function normalizeTreeItem(data){
+            const linkPreview = data.linkPreview || {};
+            return Object.assign({}, data, {
+                preview: Object.assign({}, linkPreview, {
+                    title: linkPreview.title || data.title,
+                    url: linkPreview.url || data.pageUrl,
+                    description: linkPreview.description || '',
+                    type: linkPreview.type || 'link',
+                    providerName: linkPreview.provider_name || '',
+                    thumbnailUrl: linkPreview.thumbnail_url || ''
+                }),
+                date: data.timestamp ? new Date(data.timestamp).toLocaleDateString() : 'n/a'
+            });
         }
 
         function convertToTreeView(arr) {

@@ -5,11 +5,17 @@
     width:      100%;
     padding:    16px;
     color:      #4a4a4a;
+    overflow:   auto;
+}
+
+.date {
+    margin-bottom: 16px;
+    font-size:     14px;
 }
 
 .graph-page-editor--header {
     display:     flex;
-    padding:     0 0 16px 0;
+    padding:     0 0 8px 0;
     align-items: flex-start;
 }
 
@@ -30,8 +36,28 @@
 .graph-page-editor--link-wrapper {
     overflow:      hidden;
     text-overflow: ellipsis;
+    margin-bottom: 16px;
 }
 
 .graph-page-editor--link {
     white-space: nowrap;
+}
+
+.preview {
+    margin-bottom: 16px;
+    display:       flex;
+    align-items:   flex-start;
+}
+
+.preview--description {
+}
+
+.preview--link-thumbnail {
+    width:               100px;
+    height:              100px;
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    margin-right:        8px;
+    flex-shrink:         0;
 }

@@ -6,10 +6,18 @@
         <h4 class="graph-page-editor--title" title="{{clone.title}}">
             {{clone.title}}</h4>
     </div>
+    <div class="date">{{clone.date}}</div>
     <div>
         <div class="graph-page-editor--link-wrapper">
             <a class="graph-page-editor--link" title="{{clone.pageUrl}}"
-               href="{{clone.pageUrl}}">{{clone.pageUrl}}</a>
+               href="{{clone.pageUrl}}" target="_blank">{{clone.pageUrl}}</a>
+        </div>
+        <div class="preview">
+            <div class="preview--link-thumbnail"
+                 ng-show="clone.preview.thumbnailUrl"
+                 ng-style="{'background-image': 'url(' + clone.preview.thumbnailUrl + ')'}"></div>
+            <div class="preview--description">{{clone.preview.description}}
+            </div>
         </div>
     </div>
 </div>
