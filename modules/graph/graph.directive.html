@@ -4,5 +4,5 @@
              expanded-nodes="expandedNodes"
              on-selection="showSelected(node, selected)"
              selected-node="selectedNode">
-    <graph-label></graph-label>
+    <graph-label dnd-list dnd-draggable="{node: node}" dnd-drop="onDrop(event, index, item)"></graph-label>
 </treecontrol>

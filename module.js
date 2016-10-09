@@ -1,3 +1,3 @@
 (function () {
-    angular.module('main', ['treeControl', 'graph', 'editor']);
+    angular.module('main', ['treeControl', 'dndLists', 'graph', 'editor']);
 })();

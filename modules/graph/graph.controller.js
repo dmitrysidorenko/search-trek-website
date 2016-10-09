@@ -1,6 +1,6 @@
 (function () {
     var module = angular.module('graph');
-    module.controller('graphController', function ($scope) {
+    module.controller('graphController', function ($scope, $timeout) {
         /*$scope.showSelected = function (node, selected) {
          debugger
          $scope.selectedNode = node;
@@ -27,12 +27,15 @@
             var arr = [];
             snapshot.forEach(function (row) {
                 var d = normalizeTreeItem(row.val());
+                d.id = row.key;
                 arr.push({key: row.key, data: d});
             });
             return arr;
         }
 
-        function normalizeTreeItem(data){
+        var byId;
+
+        function normalizeTreeItem(data) {
             const linkPreview = data.linkPreview || {};
             return Object.assign({}, data, {
                 preview: Object.assign({}, linkPreview, {
@@ -48,19 +51,20 @@
         }
 
         function convertToTreeView(arr) {
-            var byId = arr.reduce(function (acc, cur) {
+            byId = arr.reduce(function (acc, cur) {
                 acc[cur.key] = Object.assign({}, cur.data, {
                     name: cur.data.title,
                     children: []
                 });
                 return acc;
             }, {});
-            console.log('ById', byId);
+
             return arr.reduce(function (acc, cur) {
                 var node = byId[cur.key];
                 var parent = byId[node.parentId];
                 if (parent && node !== parent) {
                     parent.children.push(node);
+                    node.parentNodeId = parent.id;
                 } else {
                     acc.push(node);
                 }
@@ -68,7 +72,28 @@
             }, []);
         }
 
-        $scope.selectedNode;
+        $scope.$on('moved', function (event, parent, node) {
+            var tree = $scope.tree;
+            $scope.tree = [];
+            $timeout(function () {
+                parent.children.push(node);
+                var oldParent = byId[node.parentNodeId];
+
+                node.parentNodeId = parent.id;
+
+                if (oldParent) {
+                    oldParent.children = oldParent.children.filter(function (n) {
+                        return n.id !== node.id
+                    });
+                } else {
+                    tree = tree.filter(function (n) {
+                        return n.id !== node.id
+                    });
+                }
+
+                $scope.tree = tree;
+            });
+        });
 
         $scope.showSelected = function (node, selected) {
             $scope.onSelection(node, selected);
