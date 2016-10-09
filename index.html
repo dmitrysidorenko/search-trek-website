@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search trek</title>
+    <script src="libs/angular.js"></script>
+    <script src="libs/angular-tree-control-master/angular-tree-control.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="libs/angular-tree-control-master/css/tree-control.css">
+    <script src="libs/firebase.js"></script>
+
+    <script src="modules/graph/module.js"></script>
+    <script src="modules/graph/graph.controller.js"></script>
+    <script src="modules/graph/graph.directive.js"></script>
+    <script src="modules/graph/graph-label.directive.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="modules/graph/graph-label.css"/>
+
+    <script src="modules/editor/module.js"></script>
+    <script src="modules/editor/editor.controller.js"></script>
+    <script src="modules/editor/editor.directive.js"></script>
+    <link rel="stylesheet" type="text/css" href="modules/editor/editor.css"/>
+
+    <script src="module.js"></script>
+    <script src="modules/main/main.controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body ng-app="main" ng-controller="mainController">
+<div class="page">
+    <div class="navbar">
+        <a class="navbar--brand">SearchTrek</a>
+        <!--<input type="text" class="navbar&#45;&#45;search"/>-->
+    </div>
+    <div class="graph-page">
+        <div class="graph-page-graph"
+             ng-class="{'with-side-bar': finallyShownSideBar}">
+            <graph class="graph-page-graph--graph" on-selection="onNodeSelected"></graph>
+            <div ng-show="finallyShownSideBar"
+                 style="width: 360px;height: 100px;flex-shrink: 0;flex-grow: 0;"
+                 class=""></div>
+        </div>
+        <div class="side-bar"
+             ng-class="{'side-bar__shown': showSideBar}">
+            <editor selected-node="selectedNode"></editor>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+graph-label {
+    height:          auto;
+    line-height:     30px;
+    padding:         0 5px 0 5px;
+    white-space:     nowrap;
+    position:        relative;
+    display:         flex;
+    overflow:        hidden;
+    flex-shrink:     1;
+    justify-content: flex-start;
+    flex-direction:  row;
+    align-items:     center;
+}
+
+graph-label > i {
+    width:           20px;
+    height:          20px;
+    display:         inline-flex;
+    background-size: cover;
+    flex-shrink:     0;
+    margin-right:    5px;
+}
+
+.graph-label--text-wrapper {
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.graph-label--text {
+}

@@ -1,0 +1,15 @@
+<div class="graph-page-editor" ng-show="clone">
+    <div class="graph-page-editor--header">
+        <i class="graph-page-editor--favicon"
+           style="background-image: url('{{clone.favIconUrl}}')"
+           ng-show="clone.favIconUrl"></i>
+        <h4 class="graph-page-editor--title" title="{{clone.title}}">
+            {{clone.title}}</h4>
+    </div>
+    <div>
+        <div class="graph-page-editor--link-wrapper">
+            <a class="graph-page-editor--link" title="{{clone.pageUrl}}"
+               href="{{clone.pageUrl}}">{{clone.pageUrl}}</a>
+        </div>
+    </div>
+</div>

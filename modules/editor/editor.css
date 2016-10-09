@@ -1,0 +1,37 @@
+.graph-page-editor {
+    display:    block;
+    background: white;
+    height:     100%;
+    width:      100%;
+    padding:    16px;
+    color:      #4a4a4a;
+}
+
+.graph-page-editor--header {
+    display:     flex;
+    padding:     0 0 16px 0;
+    align-items: flex-start;
+}
+
+.graph-page-editor--title {
+    margin:      0;
+    line-height: 24px;
+}
+
+.graph-page-editor--favicon {
+    width:           24px;
+    height:          24px;
+    display:         inline-flex;
+    background-size: cover;
+    flex-shrink:     0;
+    margin-right:    5px;
+}
+
+.graph-page-editor--link-wrapper {
+    overflow:      hidden;
+    text-overflow: ellipsis;
+}
+
+.graph-page-editor--link {
+    white-space: nowrap;
+}
