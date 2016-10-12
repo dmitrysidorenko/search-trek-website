@@ -1,0 +1,46 @@
+.tree {
+    padding: 10px;
+}
+
+.tree--item {
+    display:       flex;
+    margin-bottom: 10px;
+}
+
+.tree--item--children {
+    margin-left: 20px;
+    position:    relative;
+}
+
+.tree--item--children--item {
+}
+
+.tree--item--children--item .track-node:before {
+    display:    block;
+    content:    '';
+    width:      10px;
+    border-top: 2px solid #909090;
+    position:   absolute;
+    left:       -10px;
+    top:        50%;
+}
+
+.tree--item--children:before {
+    content:     '';
+    display:     block;
+    position:    absolute;
+    border-left: 2px solid #909090;
+    left:        -10px;
+    top:         15px;
+    bottom:      23px;
+}
+
+.tree--item--children:after {
+    content:    '';
+    display:    block;
+    position:   absolute;
+    border-top: 2px solid #909090;
+    left:       -20px;
+    top:        15px;
+    width:      10px;
+}

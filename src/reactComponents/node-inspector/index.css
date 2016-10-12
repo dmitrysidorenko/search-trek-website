@@ -1,0 +1,60 @@
+.node-inspector {
+    display:    block;
+    background: white;
+    min-height:     100%;
+    width:      100%;
+    padding:    16px;
+    color:      #4a4a4a;
+    overflow:   auto;
+}
+
+.node-inspector--header {
+    display:         flex;
+    padding:         0 0 8px 0;
+    align-items:     flex-start;
+    justify-content: flex-end;
+}
+
+.node-inspector--favicon {
+    width:           24px;
+    height:          24px;
+    display:         inline-flex;
+    background-size: cover;
+    flex-shrink:     0;
+    margin-right:    5px;
+}
+
+.node-inspector--header--icon-with-title {
+    display: flex;
+}
+
+.node-inspector--title {
+    margin:      0;
+    line-height: 24px;
+    overflow:    hidden;
+    word-wrap:   break-word;
+}
+
+.node-inspector--header--btn {
+    flex-shrink: 0;
+    flex-grow:   0;
+    margin:      0 2px;
+}
+
+.node-inspector--header--btn:last-child {
+    margin: 0;
+}
+
+.node-inspector--dummy {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    height:          100%;
+    color:           gray;
+    font-size:       18px;
+    padding:         20px;
+    text-align:      center;
+    line-height:     1.5em;
+    letter-spacing:  1px;
+    word-spacing:    2px;
+}

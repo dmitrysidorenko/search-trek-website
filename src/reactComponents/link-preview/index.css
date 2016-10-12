@@ -1,0 +1,35 @@
+.link-preview {
+    margin-bottom:  16px;
+    display:        flex;
+    align-items:    flex-start;
+    flex-direction: column;
+    flex-grow:      1;
+}
+
+.link-preview--thumbnail {
+    background-size:     cover;
+    background-repeat:   no-repeat;
+    background-position: center center;
+    flex-shrink:         0;
+    max-height:          30vh;
+    margin-bottom:       10px;
+}
+
+.link-preview--description {
+}
+
+.link-preview--link {
+    margin-top:    -16px;
+    margin-bottom: 14px;
+    display:       flex;
+    align-items:   center;
+}
+
+.link-preview--favicon {
+    width:           20px;
+    height:          20px;
+    display:         inline-flex;
+    background-size: cover;
+    flex-shrink:     0;
+    margin-right:    5px;
+}

@@ -1,0 +1,51 @@
+@import "bulma/css/bulma.css";
+
+html, body, #root {
+    position:   relative;
+    min-height: 100%;
+    height:     100%;
+    background: #e1e1e1;
+}
+
+.workplace {
+    position:  relative;
+    flex-grow: 1;
+}
+
+.workplace--side-bar {
+    z-index:    2;
+    box-shadow: -3px 0px 9px -2px rgba(0, 0, 0, 0.75);
+    transition: margin-right ease 300ms;
+    background: #fff;
+}
+
+.workplace--content {
+    margin:   0;
+    overflow: auto;
+}
+
+.workplace--side-bar--page-list {
+    overflow: auto;
+    height:   100%;
+}
+
+.workplace--side-bar--page {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.workplace--side-bar--page-list--dummy {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    height:          100%;
+    color:           gray;
+    font-size:       18px;
+    padding:         20px;
+    text-align:      center;
+    line-height:     1.5em;
+    letter-spacing:  1px;
+    word-spacing:    2px; }
+
+.workplace--side-bar--page:only-child {
+    border-bottom: none;
+}

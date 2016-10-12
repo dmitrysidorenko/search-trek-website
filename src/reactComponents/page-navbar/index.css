@@ -1,0 +1,5 @@
+.page-navbar {
+    flex-grow:   0;
+    flex-shrink: 0;
+    z-index:     3;
+}

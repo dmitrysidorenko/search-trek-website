@@ -1,0 +1,8 @@
+.wl-page {
+    min-height: 100%;
+    height:     100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    align-content: stretch;
+}
