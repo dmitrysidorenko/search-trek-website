@@ -11,6 +11,8 @@ function renderIcon(iconUrl) {
 export default makePureReactComponent(function () {
   const { node, onNodeRemove, onNodeMove, onNodeCut } = this.props;
 
+  const visitDate = new Date(node.timestamp);
+
   if (!node) {
     return renderDummy();
   }
@@ -32,7 +34,9 @@ export default makePureReactComponent(function () {
         </button>
       </div>
       <LinkPreview data={node.linkPreview} linkUrl={node.pageUrl}
-                   favIconUrl={node.favIconUrl}/>
+                   favIconUrl={node.favIconUrl}
+                   visitDateString={`${visitDate.toLocaleDateString()}, ${visitDate.toLocaleTimeString()}`}
+      />
     </div>
   );
 });

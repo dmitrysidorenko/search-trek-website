@@ -25,6 +25,15 @@
     align-items:   center;
 }
 
+.link-preview--visit-date {
+    margin-top:    -16px;
+    margin-bottom: 14px;
+    display:       flex;
+    align-items:   center;
+    font-size:     0.8em;
+    color:         #9b9b9b;
+}
+
 .link-preview--favicon {
     width:           20px;
     height:          20px;

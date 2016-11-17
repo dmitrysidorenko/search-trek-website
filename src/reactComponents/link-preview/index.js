@@ -15,13 +15,14 @@ function renderFavIcon(iconUrl) {
 }
 
 export default makePureReactComponent(function () {
-  const { data: linkPreview, linkUrl, favIconUrl } = this.props;
+  const { data: linkPreview, linkUrl, favIconUrl, visitDateString } = this.props;
 
   return (
     <div className="link-preview">
       <h1 className="title is-5">{linkPreview.title}</h1>
       <a className="link-preview--link" href={linkUrl}
          target="_blank">{renderFavIcon(favIconUrl)}{linkPreview.provider_name}</a>
+      <div className="link-preview--visit-date">Visited at {visitDateString}</div>
 
       {renderThumbnail(linkPreview.thumbnail_url, linkPreview.thumbnail_height, linkPreview.thumbnail_width)}
       <div className="link-preview--description">
